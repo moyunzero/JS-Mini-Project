@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ToDo List</title>
+        <!-- 引入样式文件 -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- 主容器 -->
+        <div class="container">
+            <!-- 头部区域 -->
+            <div class="todo-header">
+                <h1>ToDo List</h1>
+                <!-- 任务图标 -->
+                <img src="/CRUDTask/images/icons8-task.gif" alt="task" class="task-icon" height="30px">
+            </div>
+            <!-- 输入区域 -->
+            <div class="todo-body">
+                <!-- 任务输入框 -->
+                <input 
+                    type="text" 
+                    id="todoText"
+                    class="todo-input" 
+                    placeholder="请输入任务"
+                />
+                <!-- 添加/更新按钮 -->
+                <img 
+                    src="/CRUDTask/images/add.svg" 
+                    alt="add" 
+                    class="add-icon" 
+                    id="AddUpdateClick"
+                    onclick= "CreateToDoData()"
+                />
+            </div>
+            <!-- 任务列表容器 -->
+            <ul id="list-items" class="list-items">
+            </ul>
+        </div>
+        <!-- 引入JavaScript文件 -->
+        <script type="text/javascript" src="script.js" ></script>
+    </body>
+</html>
