@@ -2,6 +2,8 @@
 const todoText = document.getElementById('todoText');        // 输入框元素
 const listItems = document.getElementById('list-items');     // 任务列表容器
 const addUpdateClick = document.getElementById('AddUpdateClick');  // 添加/更新按钮
+let updateText;
+let todoData = JSON.parse(localStorage.getItem('todoData')) || [];
 
 // 为输入框添加回车键监听事件
 todoText.addEventListener('keypress', function(event){
@@ -9,6 +11,59 @@ todoText.addEventListener('keypress', function(event){
         addUpdateClick.click(); // 触发添加/更新按钮的点击事件
     }
 });
+
+// 初始化待办事项列表
+initializeToDoList();
+
+function initializeToDoList() {
+    // 清空现有列表
+    listItems.innerHTML = '';
+    // 读取并显示待办事项
+    ReadToDoItems();
+}
+
+function ReadToDoItems(){
+    if(!todoData || !todoData.length) return;
+    
+    todoData.forEach(item => {
+        // 创建新的列表项元素
+        let li = document.createElement('li');
+
+        // 根据任务状态设置样式
+        const textDecoration = item.status ? 'line-through' : '';
+        
+        // 构建待办事项的HTML结构
+        const todoItems =`
+            <div 
+                ondblclick="CompleteToDoItem(this)"
+                style="text-decoration: ${textDecoration}" 
+            >
+                ${item.item} 
+            </div>
+            <div>
+                ${!item.status ? `
+                    <img 
+                        src="./images/edit.svg" 
+                        alt="edit" 
+                        class="edit todo-controls"
+                        onclick="UpdateToDoItems(this)" 
+                    >
+                ` : ''}
+                <img 
+                    src="./images/delete.svg" 
+                    alt="delete" 
+                    class="delete todo-controls"
+                    onclick="DeleteToDoItems(this)"  
+                >
+            </div>
+        `;
+
+        // 将HTML结构添加到列表项中
+        li.innerHTML = todoItems;
+        // 将列表项添加到任务列表容器
+        listItems.appendChild(li);
+    });
+}
 
 // 创建新的待办事项
 function CreateToDoData(){
@@ -25,22 +80,22 @@ function CreateToDoData(){
     // 构建待办事项的HTML结构
     const todoItems =`
         <div 
-            ondblclick="CompleteToDoItem(this)"  // 双击标记完成
+            ondblclick="CompleteToDoItem(this)" 
         >
-            ${todoText.value}  // 插入任务文本
+            ${todoText.value} 
         </div>
         <div>
             <img 
-                src="/CRUDTask/images/edit.svg" 
+                src="./images/edit.svg" 
                 alt="edit" 
                 class="edit todo-controls"
-                onclick="UpdateToDoItems(this)"  // 点击编辑任务
+                onclick="UpdateToDoItems(this)" 
             >
             <img 
-                src="/CRUDTask/images/delete.svg" 
+                src="./images/delete.svg" 
                 alt="delete" 
                 class="delete todo-controls"
-                onclick="DeleteToDoItems(this)"  // 点击删除任务
+                onclick="DeleteToDoItems(this)"  
             >
         </div>
     `;
@@ -49,6 +104,22 @@ function CreateToDoData(){
     li.innerHTML = todoItems;
     // 将列表项添加到任务列表容器
     listItems.appendChild(li);
+   
+    // 如果todoData为空，则初始化todoData
+    if(!todoData){
+        todoData = [];
+    }
+
+    // 将新创建的待办事项添加到todoData数组中
+    let dataItem = {
+        item: todoText.value,
+        status: false
+    };
+    todoData.push(dataItem);
+
+    // 将todoData数组保存到localStorage中
+    localStorage.setItem('todoData',JSON.stringify(todoData));
+
     // 清空输入框并重新获得焦点
     todoText.value = '';
     todoText.focus();
@@ -60,25 +131,68 @@ function CompleteToDoItem(item){
     if(item.parentElement.querySelector('div').style.textDecoration === ''){
         // 添加删除线来标记任务完成
         item.parentElement.querySelector('div').style.textDecoration = 'line-through';
+        // 隐藏编辑按钮
+        const editButton = item.parentElement.querySelector('.edit');
+        if(editButton) {
+            editButton.style.display = 'none';
+        }
     }
+    // 将完成状态更新到todoData数组中
+    todoData.forEach(element => {
+        if(item.innerText.trim() === element.item){
+            element.status = true;
+        }
+    });
+    localStorage.setItem('todoData',JSON.stringify(todoData));
 }
+
+function UpdateOnSelectionItems(){
+    // 保存旧的文本内容
+    const oldText = updateText.innerText.trim();
+    
+    // 更新 DOM 显示
+    updateText.innerHTML = todoText.value;
+    
+    // 更新 localStorage 中的数据
+    todoData = todoData.map(element => {
+        if(element.item === oldText){
+            return { ...element, item: todoText.value };
+        }
+        return element;
+    });
+    
+    // 保存到 localStorage
+    localStorage.setItem('todoData', JSON.stringify(todoData));
+    
+    // 重置界面状态
+    addUpdateClick.setAttribute('onclick','CreateToDoData()');
+    addUpdateClick.setAttribute('src','./images/add.svg');
+    todoText.value = '';
+    todoText.focus();
+}
+
 
 // 更新待办事项
 function UpdateToDoItems(item){
-    // 检查任务是否未完成（没有删除线）
     if(item.parentElement.parentElement.querySelector('div').style.textDecoration === ''){
-        // 将任务文本填充到输入框中
         todoText.value = item.parentElement.parentElement.querySelector('div').innerText;
-        // 修改添加按钮的点击事件为更新事件
         addUpdateClick.setAttribute('onclick','UpdateOnSelectionItems()');
-        // 更改按钮图标为刷新图标
-        addUpdateClick.setAttribute('src','/CRUDTask/images/refresh.svg');
+        addUpdateClick.setAttribute('src','./images/refresh.svg');
+        updateText = item.parentElement.parentElement.querySelector('div');
     }
 }
 
 // 删除待办事项
 function DeleteToDoItems(item){
-    // 获取要删除的任务文本并打印到控制台
-    console.log('删除',item.parentElement.parentElement.querySelector('div').innerText);
-    // TODO: 实现实际的删除功能
+    let deleteItem = item.parentElement.parentElement.querySelector('div').innerText;
+    if(confirm(`确定要删除任务: ${deleteItem} 吗?`)){
+        // 从 DOM 中删除元素
+        item.parentElement.parentElement.remove();
+        
+        // 从 todoData 数组中删除对应项
+        todoData = todoData.filter(element => element.item !== deleteItem);
+        
+        // 更新 localStorage
+        localStorage.setItem('todoData', JSON.stringify(todoData));
+    } 
 }
