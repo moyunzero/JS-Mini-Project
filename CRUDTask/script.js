@@ -2,11 +2,13 @@
 const todoText = document.getElementById('todoText');        // 输入框元素
 const listItems = document.getElementById('list-items');     // 任务列表容器
 const addUpdateClick = document.getElementById('AddUpdateClick');  // 添加/更新按钮
+const alertMessage = document.getElementById('AlertMessage');  // 提示信息
 let updateText;
 let todoData = JSON.parse(localStorage.getItem('todoData')) || [];
 
 // 为输入框添加回车键监听事件
 todoText.addEventListener('keypress', function(event){
+    SetAlertMessage('');
     if(event.key === 'Enter'){  // 当用户按下回车键时
         addUpdateClick.click(); // 触发添加/更新按钮的点击事件
     }
@@ -69,9 +71,9 @@ function ReadToDoItems(){
 function CreateToDoData(){
     // 输入验证：确保输入框不为空
     if(todoText.value === ''){
-        alert('请输入任务');
+        SetAlertMessage('请输入任务');
         todoText.focus();
-        return false;
+        return;
     }
     
     // 创建新的列表项元素
@@ -122,7 +124,6 @@ function CreateToDoData(){
 
     // 清空输入框并重新获得焦点
     todoText.value = '';
-    todoText.focus();
 }
 
 // 完成待办事项（添加删除线）
@@ -186,13 +187,24 @@ function UpdateToDoItems(item){
 function DeleteToDoItems(item){
     let deleteItem = item.parentElement.parentElement.querySelector('div').innerText;
     if(confirm(`确定要删除任务: ${deleteItem} 吗?`)){
-        // 从 DOM 中删除元素
-        item.parentElement.parentElement.remove();
+        const li = item.parentElement.parentElement;
         
-        // 从 todoData 数组中删除对应项
-        todoData = todoData.filter(element => element.item !== deleteItem);
+        // 1. 先添加删除动画类
+        li.classList.add('deleted-item');
         
-        // 更新 localStorage
-        localStorage.setItem('todoData', JSON.stringify(todoData));
+        // 2. 等待动画完成后再实际删除元素
+        li.addEventListener('animationend', () => {
+            li.remove();
+            // 更新数据
+            todoData = todoData.filter(element => element.item !== deleteItem);
+            localStorage.setItem('todoData', JSON.stringify(todoData));
+        });
     } 
+}
+function SetAlertMessage(message){
+    alertMessage.removeAttribute('class');
+    alertMessage.innerText = message;
+    setTimeout(() => {
+        alertMessage.classList.add('toggleMe');
+    }, 1000);
 }

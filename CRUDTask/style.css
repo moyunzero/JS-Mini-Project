@@ -83,3 +83,55 @@ li{
     height: 30px;
     padding: 3px;
 }
+h5{
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(19, 34, 195);
+}
+
+/* #AlertMessage{
+    color: rgb(19, 34, 195);
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 10px;
+} */
+li{
+    opacity: 0;
+    animation: new-item-animation 0.3s linear forwards;
+}
+@keyframes new-item-animation{
+    from{
+        opacity: 0;
+        transform: translateY(-400px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+li.deleted-item{
+    animation: deleted-item-animation 1s cubic-bezier(0.55,-0.04,0.91,0.94) forwards;
+    transform-origin: 0 100%;
+}
+@keyframes deleted-item-animation{
+    0%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(600px) rotate(90deg);
+    }
+}
+.toggleMe{
+    animation: hideME 5s forwards;
+}
+@keyframes hideME{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
