@@ -1,3 +1,4 @@
+/* 全局重置样式 */
 *{
     margin: 0;
     padding: 0;
@@ -5,14 +6,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 页面主体样式 */
 body{
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100vh; /* 确保最小高度占满视口 */
 }
 
+/* 主容器样式 */
 .container{
     background-color: #fff;
     padding: 20px;
@@ -21,6 +24,7 @@ body{
     width: 500px;
 }
 
+/* 头部区域样式 */
 .todo-header{
     text-align: center;
     display: flex;
@@ -29,6 +33,7 @@ body{
     margin-bottom: 20px;
 }
 
+/* 输入区域样式 */
 .todo-body{
     display: flex;
     justify-content: space-between;
@@ -39,6 +44,7 @@ body{
     margin-bottom: 20px;
 }
 
+/* 输入框样式 */
 .todo-body input{
     flex: 1;
     border: none;
@@ -48,6 +54,7 @@ body{
     padding: 15px 0;
 }
 
+/* 添加按钮样式 */
 .todo-body img{
     cursor: pointer;
     padding: 10px;
@@ -57,10 +64,12 @@ body{
     border-radius: 40px;
 }
 
+/* 任务图标样式 */
 .task-icon{
     margin-left: 10px;
 }
 
+/* 列表项基础样式 */
 ul li{
     list-style: none;
     font-size: 18px;
@@ -68,6 +77,7 @@ ul li{
     padding: 10px;
 }
 
+/* 单个任务项样式 */
 li{
     display: flex;
     justify-content: space-between;
@@ -77,41 +87,39 @@ li{
     margin-bottom: 10px;
 }
 
+/* 控制按钮（编辑/删除）样式 */
 .todo-controls{
     cursor: pointer;
     width: 30px;
     height: 30px;
     padding: 3px;
 }
+
+/* 提示消息样式 */
 h5{
     text-align: center;
     margin-bottom: 10px;
     color: rgb(19, 34, 195);
 }
 
-/* #AlertMessage{
-    color: rgb(19, 34, 195);
-    font-size: 16px;
-    margin-bottom: 10px;
-    text-align: center;
-    margin-top: 10px;
-} */
+/* 新任务添加动画 */
 li{
     opacity: 0;
-    animation: new-item-animation 0.3s linear forwards;
+    animation: fade-in 0.3s ease forwards;
 }
-@keyframes new-item-animation{
+
+@keyframes fade-in{
     from{
         opacity: 0;
-        transform: translateY(-400px);
     }
     to{
         opacity: 1;
-        transform: translateY(0);
     }
 }
+
+/* 任务删除动画 */
 li.deleted-item{
-    animation: deleted-item-animation 1s cubic-bezier(0.55,-0.04,0.91,0.94) forwards;
+    animation: deleted-item-animation 0.5s cubic-bezier(0.55,-0.04,0.91,0.94) forwards;
     transform-origin: 0 100%;
 }
 @keyframes deleted-item-animation{
@@ -124,6 +132,8 @@ li.deleted-item{
         transform: translateY(600px) rotate(90deg);
     }
 }
+
+/* 提示消息渐隐动画 */
 .toggleMe{
     animation: hideME 5s forwards;
 }
@@ -133,5 +143,27 @@ li.deleted-item{
     }
     100%{
         opacity: 0;
+    }
+}
+
+/* 移动端适配 */
+@media (max-width: 576px) {
+    .container {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .todo-body input {
+        font-size: 16px;
+    }
+    
+    .todo-body img {
+        height: 45px;
+        width: 45px;
+    }
+    
+    .todo-controls {
+        width: 25px;
+        height: 25px;
     }
 }

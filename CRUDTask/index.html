@@ -2,30 +2,33 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <!-- 确保页面在移动设备上正确显示的视口设置 -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ToDo List</title>
-        <!-- 引入样式文件 -->
+        <!-- 链接到外部样式表 -->
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!-- 主容器 -->
+        <!-- 主容器 - 包含整个待办事项应用 -->
         <div class="container">
-            <!-- 头部区域 -->
+            <!-- 头部区域 - 显示标题和任务图标 -->
             <div class="todo-header">
                 <h1>ToDo List</h1>
-                <!-- 任务图标 -->
+                <!-- 动态任务图标 -->
                 <img src="./images/icons8-task.gif" alt="task" class="task-icon" height="30px">
             </div>
-            <!-- 输入区域 -->
+            
+            <!-- 输入区域 - 包含输入框和添加按钮 -->
             <div class="todo-body">
-                <!-- 任务输入框 -->
+                <!-- 任务输入框 - 用于输入新任务或编辑现有任务 -->
                 <input 
                     type="text" 
                     id="todoText"
                     class="todo-input" 
                     placeholder="请输入任务"
+                    aria-label="输入新任务"
                 />
-                <!-- 添加/更新按钮 -->
+                <!-- 添加/更新按钮 - 双功能按钮，可用于添加新任务或更新现有任务 -->
                 <img 
                     src="./images/add.svg" 
                     alt="add" 
@@ -34,12 +37,16 @@
                     onclick= "CreateToDoData()"
                 />
             </div>
+            
+            <!-- 提示消息显示区域 -->
             <h5 id="AlertMessage"></h5>
-            <!-- 任务列表容器 -->
+            
+            <!-- 任务列表容器 - 显示所有待办事项 -->
             <ul id="list-items" class="list-items">
             </ul>
         </div>
-        <!-- 引入JavaScript文件 -->
+        
+        <!-- 引入JavaScript逻辑文件 -->
         <script type="text/javascript" src="script.js" ></script>
     </body>
 </html>
