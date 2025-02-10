@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #f0f0f0;
+    padding: 25px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.add-btn{
+    height: 150px;
+    background: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.note-row{
+    background: #fff;
+    margin: 10px;
+}
+
+.note-editor{
+    height: 250px;
+    width: 250px;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.note-editor::-webkit-scrollbar {
+    display: none;
+}
+
+.note-controls{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width:250px;
+    padding: 10px;
+    border-top: 1px solid;
+}
+
+.note-controls div{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    text-align: center;
+    background: #eee;
+    border-radius: 5px;
+    line-height: 30px;
+}
+
+.note-controls div:hover{
+    background: #ddd;
+}
+
+.note-controls img{
+    height: 30px;
+    cursor: pointer;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+}
