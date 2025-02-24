@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年龄计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>年龄计算器</h2>
+        <div class="input-box">
+            <!-- <label for="ageValue">出生日期：</label> -->
+            <input type="date" id="ageValue" name="ageValue" aria-label="选择出生日期" />
+            <img 
+                id="calculateAge" 
+                src="images/arrow-right.png" 
+                alt="计算年龄" 
+                title="点击计算年龄"
+            />
+        </div>
+
+        <div class="output-box">
+            <label id="ageResult">你的年龄是：</label>
+            <div>
+                <strong id="currentAge">0岁 0个月 0天</strong>
+                <img src="images/age.png" alt="婴儿" />
+            </div>
+
+            <label>你的生日日期是：</label>
+            <div>
+                <strong id="DOB">0000年00月00日</strong>
+                <img src="images/birthday-cake.png" alt="生日蛋糕" />
+            </div>
+        </div>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>  
