@@ -24,7 +24,7 @@
 
 ## 项目结构
 
-```
+```plaintext
 TextEditor/
 ├── index.html # 主页面结构
 ├── style.css # 样式表

@@ -1,83 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* 导入 Google Noto Serif SC 字体，适合中文显示 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
 
-*{
+/* 全局样式重置 */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    /* 使用衬线字体增加古典韵味 */
+    font-family: 'Noto Serif SC', serif;
     box-sizing: border-box;
 }
 
-body{
-    background: #78c1f3;
+/* 页面主体样式 */
+body {
+    /* 使用青花瓷蓝作为背景色 */
+    background: #1A94BC;
     min-height: 100vh;
+    /* Flex布局使内容垂直水平居中 */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container{
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    width: 450px;
+/* 主容器样式 */
+.container {
+    /* 使用温暖的米白色背景 */
+    background: #FCF6E5;
+    padding: 30px;
+    border-radius: 8px;
+    width: 480px;
+    /* 优雅的阴影效果 */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    /* 添加纸张质感的背景纹理 */
+    background-image: linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size: 100% 35px;
 }
 
-.container h2{
+/* 标题样式 */
+.container h2 {
     text-align: center;
-    margin-bottom: 15px;
-    color: #333;
+    margin-bottom: 20px;
+    /* 使用中国红作为标题色 */
+    color: #B11030;
+    font-size: 28px;
+    letter-spacing: 2px;
+    /* 添加典雅的文字阴影 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
+/* 输入框区域样式 */
 .input-box {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
-    border-radius: 30px;
+    margin-bottom: 20px;
+    border-radius: 6px;
     align-items: center;
-    background: #78c1f3;
+    /* 使用青花瓷蓝作为背景 */
+    background: #1A94BC;
+    padding: 5px;
+    border: 2px solid #15799D;
 }
 
-.input-box input{
-    flex : 1;
+/* 日期输入框样式 */
+.input-box input {
+    flex: 1;
     background: transparent;
     border: none;
     outline: none;
-    padding: 15px;
-    font-size: 18px;
+    padding: 12px;
+    font-size: 16px;
     color: #fff;
-    cursor:pointer;
-}
-
-.input-box img {
-    height:55px;
-    width: 55px;
-    border-radius: 50%;
-    padding: 15px;
     cursor: pointer;
 }
 
-::webkit-calendar-picker-indicator {
-    background-color: #fff;
+/* 计算按钮图标样式 */
+.input-box img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    background: #FCF6E5;
+    margin: 5px;
+}
+
+/* 自定义日期选择器图标样式 */
+::-webkit-calendar-picker-indicator {
+    background-color: #FCF6E5;
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
 }
 
-.output-box{
-    /* background: #78c1f3; */
-    margin: 15px;
-    /* color: #fff; */
+/* 结果显示区域样式 */
+.output-box {
+    padding: 15px;
+    /* 使用淡雅的边框 */
+    border: 1px solid #D4B69A;
+    border-radius: 6px;
+    margin-top: 20px;
 }
-.output-box div{
+
+/* 结果区域内的信息块样式 */
+.output-box div {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding-left: 10%;
-    margin-bottom: 5px;
+    gap: 10px;
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    /* 使用淡雅的背景色 */
+    background: rgba(212, 182, 154, 0.1);
+    border-radius: 4px;
+}
+
+/* 图标通用样式 */
+img {
+    height: 35px;
+    width: 35px;
+}
+
+/* 表格样式 */
+.output-box table {
+    width: 100%;
+    margin: 15px 0;
+    border-collapse: collapse;
+}
+
+/* 表格单元格样式 */
+td {
+    padding: 8px 15px;
+    border-bottom: 1px solid #D4B69A;
+    color: #333;
+}
+
+/* 年龄和出生日期显示样式 */
+#currentAge, #DOB {
+    padding: 8px;
+    /* 使用典雅的墨绿色 */
+    color: #2C4F54;
+    font-size: 18px;
+}
+
+/* 输入框悬停效果 */
+.input-box:hover {
+    /* 添加微妙的上浮动画 */
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* 生日倒计时特殊样式 */
+.output-box div:last-child {
+    /* 使用中国红突出显示 */
+    background: #B11030;
+    color: #FCF6E5;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-top: 15px;
     font-weight: 500;
 }
 
-img{
-    height: 35px;
-    width: 35px;
+/* 倒计时数字样式 */
+.output-box div:last-child b {
+    color: #FCF6E5;
+    font-size: 20px;
+    margin: 0 5px;
 }
