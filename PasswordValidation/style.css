@@ -1,0 +1,84 @@
+/* 引入Google Noto Serif SC字体 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap");
+
+/* 重置默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif SC", serif;
+  box-sizing: border-box;
+}
+
+/* 页面整体布局 */
+body {
+  background: #53b4d5; /* 设置背景色为柔和的蓝色 */
+  min-height: 100vh; /* 确保最小高度占满视口 */
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+}
+
+/* 主容器样式 */
+.container {
+    background: #f9f9f9; /* 浅灰色背景 */
+    padding: 30px;
+    border-radius: 8px; /* 圆角效果 */
+    width: 480px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+}
+
+/* 标题样式 */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #b11030; /* 深红色标题 */
+    font-size: 28px;
+    letter-spacing: 2px; /* 字间距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 文字阴影 */
+}
+
+/* 密码输入框容器样式 */
+.password-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px; /* 圆形输入框 */
+    background: #53b4d5;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 输入框样式 */
+.password-input input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+    padding: 10px 0;
+    color: #fff; /* 输入文字为白色 */
+}
+
+/* 显示/隐藏密码图标样式 */
+.password-input img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* 校验规则图标样式 */
+.password-check img{
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+/* 校验规则文字样式 */
+.password-check div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: red; /* 默认显示红色 */
+}

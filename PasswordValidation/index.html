@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 确保页面在移动设备上正确缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入样式文件 -->
+    <link href="style.css" rel="stylesheet" />
+    <title>密码校验器</title>
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 标题 -->
+        <h2>密码校验器</h2>
+        <div class="password-body">
+            <!-- 密码输入区域 -->
+            <div class="password-input">
+                <!-- 密码输入框 -->
+                <input 
+                type="password" 
+                id="validatorText" 
+                name="validatorText" 
+                placeholder="请输入密码" />
+                <!-- 显示/隐藏密码切换按钮 -->
+                <img src="images/hide.png" alt="" id="showHide">
+            </div>
+            <!-- 密码校验规则列表 -->
+            <div class="password-check">
+                <!-- 长度校验 -->
+                <div class="check-length">
+                   <img src="images/close.png" />至少八个字符
+                </div>
+                <!-- 大写字母校验 -->
+                <div class="check-uppercase">
+                    <img src="images/close.png" />至少一个大写字母
+                </div>
+                <!-- 小写字母校验 -->
+                <div class="check-lowercase">
+                    <img src="images/close.png" />至少一个小写字母
+                </div>
+                <!-- 数字校验 -->
+                <div class="check-number">
+                    <img src="images/close.png" />至少一个数字
+                </div>
+                <!-- 特殊字符校验 -->
+                <div class="check-special">
+                    <img src="images/close.png" />至少一个特殊字符
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 引入JavaScript文件 -->
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
