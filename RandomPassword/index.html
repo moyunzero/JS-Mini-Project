@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机密码生成</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h3>随机密码生成器</h3>
+        <div class="password-body">
+            <div class="text-area">
+                <input 
+                    type="text" 
+                    id="strongPasswordValue" 
+                    title="随机生成的密码"
+                    disabled
+                />
+                <img src="./images/copy.png" id="CopySuccess" onclick="CopyStrongPassword()"/>
+            </div>
+            <div class="password-length">
+                <input
+                    type="range"
+                    id="rangeInput"
+                    min="6"
+                    max="25"
+                    value="8"
+                    oninput="rangeValue.value = this.value"
+                />
+                <input 
+                    type="number"
+                    id="rangeValue"
+                    min="6"
+                    max="25"
+                    value="8"
+                    oninput="rangeInput.value = this.value"
+                />
+            </div>
+            <div class="checkBox-list">
+                <label for="Uppercase" class="options" >
+                    <input 
+                        type="checkbox" id="Uppercase"
+                        checked 
+                    />
+                    包含大写字母
+                </label>
+                <label for="Lowercase" class="options">
+                    <input 
+                        type="checkbox" id="Lowercase" 
+                    />
+                    包含小写字母
+                </label>
+                <label for="Numbers" class="options">
+                    <input 
+                        type="checkbox" id="Numbers" 
+                    />
+                    包含数字
+                </label>
+                <label for="Symbols" class="options">
+                    <input 
+                        type="checkbox" id="Symbols" 
+                    />
+                    包含符号
+                </label>
+                <label for="Duplicate" class="options">
+                    <input 
+                        type="checkbox" id="Duplicate" 
+                    />
+                    除去重复字符
+                </label>
+            </div>
+
+        </div>
+        <button id="generateButton">生成密码</button>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
