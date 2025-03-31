@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OTP 验证</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>OTP验证器</h2>
+            <p>
+                输入您的手机号码，我们将向您发送验证码~
+                <span id="mobileNumber">(000) 000-0000</span>
+            </p>
+
+            <p>OTP 将在<span id="expire">30</span>秒后过期</p>
+            <div class="row">
+                <input type="number" />
+                <input type="number" disabled/>
+                <input type="number" disabled/>
+                <input type="number" disabled/>
+            </div>
+            <button type="button">验证</button>
+            <p>
+                您还没有收到验证码？
+                <a href="javascript:void(0)" id="request">重新请求</a>
+            </p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
