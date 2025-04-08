@@ -1,0 +1,58 @@
+/* 导入Google Fonts中的Poppins字体 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); 
+
+/* 全局样式重置 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 页面主体样式 */
+body{
+    background: #78c1f3; /* 设置背景颜色为浅蓝色 */
+    min-height: 100vh; /* 最小高度为视口高度 */
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+/* 主容器样式 */
+.container{
+    width: 650px; /* 设置容器宽度 */
+    height: 450px; /* 设置容器高度 */
+    background: #fff; /* 设置背景为白色 */
+    padding: 10px; /* 内边距 */
+    border-radius: 10px; /* 圆角边框 */
+    text-align: center; /* 文本居中 */
+}
+
+/* 文本输入区域样式 */
+textarea{
+    width: 100%; /* 宽度占满容器 */
+    height: 300px; /* 设置高度 */
+    padding: 5px; /* 内边距 */
+    border-radius: 5px; /* 圆角边框 */
+    resize: none; /* 禁止用户调整大小 */
+    font-size: 22px; /* 字体大小 */
+    outline: none; /* 移除焦点时的轮廓 */
+}
+
+/* 统计结果行样式 */
+.row{
+    display: flex; /* 使用弹性布局 */
+    justify-content: space-between; /* 项目之间平均分配空间 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 标签样式 */
+label{
+    padding: 10px; /* 内边距 */
+}
+
+/* 统计数字样式 */
+.row span{
+    font-weight: bold; /* 粗体 */
+    font-size: 20px; /* 字体大小 */
+}
