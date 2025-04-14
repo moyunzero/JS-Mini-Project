@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- 设置字符编码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 响应式视口设置 -->
+    <title>表单验证</title> <!-- 页面标题 -->
+    <link rel="stylesheet" href="style.css"> <!-- 引入自定义样式表 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- 引入Font Awesome图标库 -->
+</head>
+<body>
+    <div class="container"> <!-- 主容器 -->
+        <form id="createAccountForm"> <!-- 创建账户表单 -->
+            <h1>创建账户</h1> <!-- 表单标题 -->
+
+            <!-- 用户名输入控件 -->
+            <div class="form-control">
+                <label for="username">用户名</label> <!-- 标签 -->
+                <input type="text" id="username" placeholder="请输入用户名" onblur="checkUsername()" /> <!-- 输入框，失焦时验证 -->
+                <img/> <!-- 验证状态图标 -->
+                <small></small> <!-- 错误提示文本 -->
+            </div>
+            
+            <!-- 邮箱输入控件 -->
+            <div class="form-control">
+                <label for="email">邮箱</label> <!-- 标签 -->
+                <input type="email" id="email" placeholder="请输入邮箱" onblur="checkEmail()" /> <!-- 输入框，失焦时验证 -->
+                <img> <!-- 验证状态图标 -->
+                <small></small> <!-- 错误提示文本 -->
+            </div>
+            
+            <!-- 密码输入控件 -->
+            <div class="form-control">
+                <label for="password">密码</label> <!-- 标签 -->
+                <input type="password" id="password" placeholder="请输入密码" onblur="checkPassword()" /> <!-- 输入框，失焦时验证 -->
+                <img/> <!-- 验证状态图标 -->
+                <small></small> <!-- 错误提示文本 -->
+            </div>
+            
+            <!-- 确认密码输入控件 -->
+            <div class="form-control">
+                <label for="password2">确认密码</label> <!-- 标签 -->
+                <input type="password" id="password2" placeholder="请再次输入密码" onblur="checkPassword2()" /> <!-- 输入框，失焦时验证 -->
+                <img/> <!-- 验证状态图标 -->
+                <small></small> <!-- 错误提示文本 -->
+            </div>
+            
+            <!-- 提交按钮容器 -->
+            <div class="form-button">
+                <button type="submit">提交</button> <!-- 提交按钮 -->
+            </div>
+        </form>
+        
+        <!-- 注册成功确认信息，初始隐藏 -->
+        <div id="conformation">
+            <h1>账户创建成功</h1> <!-- 成功标题 -->
+            <p>恭喜您，您的账户已经创建成功！</p> <!-- 成功提示 -->
+            <img src="images/check.png"/> <!-- 成功图标 -->
+        </div>
+    </div>
+    
+    <!-- 引入JavaScript脚本 -->
+    <script src="script.js"></script>
+</body>
+</html>

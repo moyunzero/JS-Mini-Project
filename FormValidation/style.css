@@ -1,0 +1,149 @@
+/* 导入Poppins字体，包含不同字重 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); 
+
+/* 全局样式重置 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* 设置全局字体 */
+}
+
+/* 页面主体样式 */
+body{
+    background: #78c1f3; /* 设置背景颜色为浅蓝色 */
+    min-height: 100vh; /* 最小高度为视口高度 */
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */    
+}
+
+/* 主容器样式 */
+.container{
+    background: #fff; /* 白色背景 */
+    padding: 20px; /* 内边距 */
+    border-radius: 10px; /* 圆角边框 */
+    width: 500px; /* 固定宽度 */
+}
+
+/* 标题样式 */
+h1{
+    margin-bottom: 20px; /* 底部外边距 */
+    text-align: center; /* 文本居中 */
+}
+
+/* 表单控件容器样式 */
+.form-control{
+    display: flex; /* 弹性布局 */
+    /* gap: 10px; */ /* 注释掉的间隙设置 */
+    padding: 10px; /* 内边距 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    position: relative; /* 相对定位，用于内部元素的绝对定位 */
+}
+
+/* 表单标签样式 */
+.form-control label{
+   width: 20%; /* 标签宽度为容器的20% */
+   font-size: 18px; /* 字体大小 */
+   font-weight: 500; /* 字体粗细 */
+}
+
+/* 表单输入框样式 */
+.form-control input{
+    width: 60%; /* 输入框宽度为容器的60% */
+    height: 40px; /* 高度 */
+    padding: 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角边框 */
+    border: 2px solid #ccc; /* 边框样式 */
+    font-size: 16px; /* 字体大小 */
+}
+
+/* 输入框获得焦点时的样式 */
+.form-control input:focus{
+    outline: none; /* 移除默认的焦点轮廓 */
+    border-color: #78c1f3; /* 改变边框颜色为主题色 */
+}
+
+/* 表单按钮容器样式 */
+.form-button{
+    display: flex; /* 弹性布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    padding: 10px; /* 内边距 */
+}
+
+/* 提交按钮样式 */
+.form-button button{
+    width: 80%; /* 按钮宽度为容器的80% */
+    height: 40px; /* 高度 */
+    border-radius: 5px; /* 圆角边框 */
+    border: none; /* 无边框 */
+    background: #78c1f3; /* 背景色为主题色 */
+    color: #fff; /* 文字颜色为白色 */
+    font-size: 18px; /* 字体大小 */
+    font-weight: 500; /* 字体粗细 */
+}
+
+/* 表单控件中图标样式 */
+.form-control img{
+    height: 30px; /* 高度 */
+    width: 30px; /* 宽度 */
+    position: absolute; /* 绝对定位 */
+    right: 20px; /* 距右侧20px */
+    border: none; /* 无边框 */
+    outline: none; /* 无轮廓 */
+    box-shadow: none; /* 无阴影 */
+}
+
+/* 错误提示文本样式 */
+.form-control small{
+    position: absolute; /* 绝对定位 */
+    bottom: -10px; /* 位于控件底部下方10px */
+    right: 0; /* 右对齐 */
+    left: 32%; /* 左侧起始位置 */
+    color: red; /* 错误文本为红色 */
+    /* visibility: hidden; */ /* 注释掉的可见性设置 */
+}
+
+/* 没有src属性的图片不显示 */
+.form-control img:not([src]) {
+    display: none;
+}
+
+/* 确认信息容器样式 */
+#conformation{
+    text-align: center; /* 文本居中 */
+    padding: 10px; /* 内边距 */
+    color: green; /* 文本颜色为绿色 */
+    display: none; /* 初始不显示 */
+}
+
+/* 确认信息中的图片样式 */
+#conformation img{
+    height: 250px; /* 高度 */
+}
+
+/* 错误状态的输入框动画样式 */
+.error{
+    animation: shake 0.2s ease-in-out 0s 2; /* 应用抖动动画：持续0.2秒，缓入缓出，无延迟，重复2次 */
+}
+
+/* 定义抖动动画关键帧 */
+@keyframes shake {
+    0% {
+        transform: translateX(0); /* 起始位置 */
+    }
+    25% {
+        transform: translateX(-5px); /* 向左移动5px */
+    }
+    50% {
+        transform: translateX(0); /* 回到原位 */
+    }
+    75% {
+        transform: translateX(5px); /* 向右移动5px */
+    }
+    100% {
+        transform: translateX(0); /* 结束位置回到原位 */   
+    }
+}
