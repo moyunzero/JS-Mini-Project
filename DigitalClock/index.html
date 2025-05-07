@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字闹钟</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="DigitalClock"> </div>
+        <div id="DigitalDate"></div>
+
+        <div id="alarmRow">
+            <div class="alarmArea">
+                <select id="hours"></select>
+                <select id="minutes"></select>
+                <select id="session">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+            <input type="text" id="alarmName" placeholder="闹钟名称" />
+            <div id="setAlarmTime"></div>
+            <p id="alarmInterval"></p>
+            <button id="setAlarm">设置闹钟</button>
+        </div>
+    </div>
+
+</body>
+</html>
