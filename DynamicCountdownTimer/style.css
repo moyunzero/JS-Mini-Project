@@ -1,0 +1,93 @@
+*{
+    margin:  0px;
+    padding: 0px;
+    box-sizing: border-box; 
+    font-family: "Poppins";
+}
+
+body{
+    background: #78c1f3;
+    margin: 10% auto 0;
+    text-align: center;
+}
+h1{
+    margin-bottom: 10px; /* 调整标题和输入区域的间距 */
+    margin: 25px 0;
+    color: white;
+    text-transform: capitalize;
+}
+
+.input-container {
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* 输入框之间的间距 */
+}
+
+.time-down{
+    display: flex;
+}
+
+.input-container input[type="number"] {
+    width: 100px; /* 调整输入框宽度 */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.input-container button {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* 按钮颜色 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.input-container button:hover {
+    background-color: #45a049;
+}
+
+.container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /*  确保子元素垂直排列 */
+    align-items: center; /* 水平居中子元素 */
+    /* justify-content: center;  在column方向上，这个属性控制垂直对齐，可能不需要 */
+}
+
+.countDown{
+    float: left;
+    margin-right: 45px;
+    text-align: center;
+} 
+
+.title{
+    display: block;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.countValue{
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #fff;
+    color: #1a1a1a;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.countValue > span{
+    margin: auto;
+    font-size: 80px;
+    font-weight: 700;
+    color: red;
+}

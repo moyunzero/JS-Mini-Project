@@ -1,0 +1,221 @@
+<!-- HTML文档类型声明 -->
+<!DOCTYPE html>
+<!-- HTML根元素，语言设置为英语 -->
+<html lang="en">
+    <!-- 文档头部，包含元数据和链接 -->
+    <head>
+        <!-- 设置字符编码为UTF-8 -->
+        <meta charset="UTF-8">
+        <!-- 设置视口，用于响应式设计 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 设置页面标题 -->
+        <title>倒计时Demo</title>
+        <!-- 链接外部CSS样式表 -->
+        <link rel="stylesheet" href="style.css">
+        <!-- 链接外部JavaScript文件，使用defer属性确保HTML解析完毕后执行 -->
+        <script defer src="script.js"></script>
+    </head>
+    <!-- 文档主体部分 -->
+    <body>
+        <!-- 页面主标题 -->
+        <h1>设置倒计时</h1>
+        <!-- 主容器，包含输入区域和倒计时显示区域 -->
+        <div class="container">
+            <!-- 输入区域容器 -->
+            <div class="input-container">
+                <!-- 年份输入框 -->
+                <input type="number" id="year" placeholder="年" min="2024">  
+                <!-- 月份输入框 -->
+                <input type="number" id="month" placeholder="月" min="1" max="12">
+                <!-- 日期输入框 -->
+                <input type="number" id="day" placeholder="日" min="1" max="31">
+                <!-- 小时输入框 -->
+                <input type="number" id="hour" placeholder="时" min="0" max="23">
+                <!-- 分钟输入框 -->
+                <input type="number" id="minute" placeholder="分" min="0" max="59">
+                <!-- 秒输入框 -->
+                <input type="number" id="second" placeholder="秒" min="0" max="59">
+                <!-- 开始倒计时按钮 -->
+                <button id="startButton">开始倒计时</button>
+            </div>
+            <!-- 倒计时显示区域容器 -->
+            <div class="time-down">
+                <!-- 天数显示区域 -->
+                <div class="countDown days">
+                    <!-- 天数标题 -->
+                    <span class="title">days</span>
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示天数的span元素 -->
+                        <!-- 用于显示小时十位数的span元素 -->
+                        <!-- 用于显示分钟十位数的span元素 -->
+                        <!-- 用于显示秒十位数的span元素 -->
+                        <span class="index1"></span>
+                    </div>
+                    <!-- 秒个位数值容器 -->
+                    </div>
+                    <!-- 分钟个位数值容器 -->
+                    </div>
+                    <!-- 小时个位数值容器 -->
+                    </div>
+                </div>
+                <!-- 小时显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                </div>
+            <!-- 倒计时显示区域容器 -->
+                <div class="countDown hours">
+                    <!-- 小时标题 -->
+                    <span class="title">hours</span>
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示天数的span元素 -->
+                        <!-- 用于显示小时十位数的span元素 -->
+                        <!-- 用于显示分钟十位数的span元素 -->
+                        <!-- 用于显示秒十位数的span元素 -->
+                        <span class="index1"></span>
+                    </div>
+                    <!-- 秒个位数值容器 -->
+                    </div>
+                    <!-- 分钟个位数值容器 -->
+                    </div>
+                    <!-- 小时个位数值容器 -->
+                    </div>
+                </div>
+                <!-- 小时显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示小时个位数的span元素 -->
+                        <!-- 用于显示分钟个位数的span元素 -->
+                        <!-- 用于显示秒个位数的span元素 -->
+                        <span class="index2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+                    </div>
+                </div>
+                <!-- 秒显示区域 -->
+                    </div>
+                </div>
+                <!-- 分钟显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                </div>
+            <!-- 倒计时显示区域容器 -->
+                <div class="countDown minutes">
+                    <!-- 分钟标题 -->
+                    <span class="title">minutes</span>
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示天数的span元素 -->
+                        <!-- 用于显示小时十位数的span元素 -->
+                        <!-- 用于显示分钟十位数的span元素 -->
+                        <!-- 用于显示秒十位数的span元素 -->
+                        <span class="index1"></span>
+                    </div>
+                    <!-- 秒个位数值容器 -->
+                    </div>
+                    <!-- 分钟个位数值容器 -->
+                    </div>
+                    <!-- 小时个位数值容器 -->
+                    </div>
+                </div>
+                <!-- 小时显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示小时个位数的span元素 -->
+                        <!-- 用于显示分钟个位数的span元素 -->
+                        <!-- 用于显示秒个位数的span元素 -->
+                        <span class="index2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+                    </div>
+                </div>
+                <!-- 秒显示区域 -->
+                    </div>
+                </div>
+                <!-- 分钟显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                </div>
+            <!-- 倒计时显示区域容器 -->
+                <div class="countDown seconds">
+                    <!-- 秒标题 -->
+                    <span class="title">seconds</span>
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示天数的span元素 -->
+                        <!-- 用于显示小时十位数的span元素 -->
+                        <!-- 用于显示分钟十位数的span元素 -->
+                        <!-- 用于显示秒十位数的span元素 -->
+                        <span class="index1"></span>
+                    </div>
+                    <!-- 秒个位数值容器 -->
+                    </div>
+                    <!-- 分钟个位数值容器 -->
+                    </div>
+                    <!-- 小时个位数值容器 -->
+                    </div>
+                </div>
+                <!-- 小时显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                    <!-- 天数值容器 -->
+                    <!-- 小时十位数值容器 -->
+                    <!-- 分钟十位数值容器 -->
+                    <!-- 秒十位数值容器 -->
+                    <div class="countValue">
+                        <!-- 用于显示小时个位数的span元素 -->
+                        <!-- 用于显示分钟个位数的span元素 -->
+                        <!-- 用于显示秒个位数的span元素 -->
+                        <span class="index2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+                    </div>
+                </div>
+                <!-- 秒显示区域 -->
+                    </div>
+                </div>
+                <!-- 分钟显示区域 -->
+                    </div>
+            <!-- 倒计时显示区域容器 -->
+                </div>
+            <!-- 倒计时显示区域容器 -->
+            </div>
+            <!-- 倒计时显示区域容器 -->
+        </div>
+    </body>
+</html>
