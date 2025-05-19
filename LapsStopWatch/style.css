@@ -1,0 +1,167 @@
+/* 全局样式重置 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 确保元素的宽度包含padding和border */
+}
+
+/* 页面背景和布局 */
+body{
+    /* 渐变背景色，从浅蓝色到紫色 */
+    background: linear-gradient(135deg, #78c1f3, #9b59b6);
+    height: 100vh; /* 视口高度 */
+    /* 使用Flexbox居中内容 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif; /* 设置默认字体 */
+}
+
+/* 主容器样式 */
+.container{
+    background-color: #fff;
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px; /* 圆角边框 */
+    text-align: center;
+    /* 添加阴影效果增强立体感 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* 确保彩色条不会溢出容器 */
+}
+
+/* 容器顶部的彩色条 */
+.container::before {
+    content: ''; /* 伪元素必需的内容 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    /* 彩色渐变条，使用计时器按钮的颜色 */
+    background: linear-gradient(to right, #4CAF50, #2196F3, #f44336, #ff9800);
+}
+
+/* 计时器显示区域样式 */
+#stopwatchDuration{
+    font-size: 55px; /* 大字体显示时间 */
+    color: #333;
+    padding: 20px;
+    font-family: 'Courier New', monospace; /* 等宽字体确保数字对齐 */
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin: 10px 0;
+    /* 内阴影效果增强立体感 */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮区域布局 */
+.lapsButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* 按钮之间的间距 */
+    margin-top: 20px;
+}
+
+/* 按钮通用样式 */
+.lapsButtons button{
+    padding: 15px;
+    height: 60px;
+    width: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%; /* 圆形按钮 */
+    cursor: pointer; /* 鼠标悬停时显示手型光标 */
+    /* 添加过渡效果使交互更流畅 */
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 开始按钮样式 - 绿色 */
+#start {
+    background-color: #4CAF50; /* 绿色 */
+    color: white;
+}
+
+/* 停止按钮样式 - 红色 */
+#stop {
+    background-color: #f44336; /* 红色 */
+    color: white;
+}
+
+/* 重置按钮样式 - 橙色 */
+#reset {
+    background-color: #ff9800; /* 橙色 */
+    color: white;
+}
+
+/* 圈数按钮样式 - 蓝色 */
+#lap {
+    background-color: #2196F3; /* 蓝色 */
+    color: white;
+}
+
+/* 按钮悬停效果 */
+.lapsButtons button:hover {
+    transform: scale(1.05); /* 轻微放大 */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 增强阴影 */
+}
+
+/* 按钮点击效果 */
+.lapsButtons button:active {
+    transform: scale(0.95); /* 轻微缩小，模拟按下效果 */
+}
+
+/* 圈数记录区域样式 */
+#laps{
+    height: 200px;
+    padding: 10px;
+    overflow: auto; /* 允许滚动查看更多圈数 */
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    /* 内阴影效果 */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 圈数记录项样式 */
+#laps li{
+    list-style: none; /* 移除默认列表样式 */
+    padding: 12px 15px;
+    font-size: 18px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 使用Flexbox布局使圈数和时间分别靠左右对齐 */
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace; /* 等宽字体确保时间对齐 */
+    transition: all 0.2s ease; /* 添加过渡效果 */
+    align-items: center;
+}
+
+/* 圈数记录项悬停效果 */
+#laps li:hover{
+    transform: translateX(5px); /* 向右移动效果 */
+    background-color: #f0f8ff; /* 浅蓝色背景 */
+}
+
+/* 圈数标签样式 */
+.lap-number {
+    font-weight: bold;
+    color: #2196F3; /* 蓝色 */
+    background-color: #e3f2fd; /* 浅蓝色背景 */
+    padding: 5px 10px;
+    border-radius: 15px; /* 圆角效果 */
+}
+
+/* 时间标签样式 */
+.lap-time {
+    font-weight: 500;
+    color: #333;
+    letter-spacing: 1px; /* 增加字母间距提高可读性 */
+}
